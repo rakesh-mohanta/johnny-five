@@ -637,12 +637,16 @@
     ]
   },
   {
-    "topic": "IMU",
-    "classes": ["IMU"],
+    "topic": "IMU/Multi",
+    "classes": ["IMU", "Multi"],
     "examples": [
       {
         "file": "imu-mpu6050.js",
         "title": "IMU - MPU6050"
+      },
+      {
+        "file": "multi-mpl115a2.js",
+        "title": "Multi - MPL115A2"
       }
     ]
   },
@@ -725,6 +729,14 @@
       {
         "file": "temperature-mpu6050.js",
         "title": "Temperature - MPU6050"
+      },
+      {
+        "file": "barometer-mpl115a2.js",
+        "title": "Barometer - MPL115A2"
+      },
+      {
+        "file": "temperature-mpl115a2.js",
+        "title": "Temperature - MPL115A2"
       }
     ]
   },
