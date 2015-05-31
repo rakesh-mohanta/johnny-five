@@ -15,7 +15,7 @@ io.emit("ready");
 
 exports["Button, Digital Pin"] = {
   setUp: function(done) {
-    this.digitalRead = sinon.spy(board.io, "digitalRead");
+    this.digitalRead = sinon.spy(MockFirmata.prototype, "digitalRead");
     this.button = new Button({
       pin: 8,
       board: board
@@ -102,15 +102,27 @@ exports["Button, Digital Pin"] = {
       clock.restore();
       test.done();
     });
+    this.button.holdtime = 10;
     callback(this.button.downValue);
-    clock.tick(500);
-    callback(this.button.upValue);
+    clock.tick(2);
+    callback(this.button.downValue);
+    clock.tick(2);
+    callback(this.button.downValue);
+    clock.tick(2);
+    callback(this.button.downValue);
+    clock.tick(2);
+    callback(this.button.downValue);
+    clock.tick(2);
+    callback(this.button.downValue);
+    clock.tick(2);
+    callback(this.button.downValue);
+    clock.tick(2);
   },
 };
 
 exports["Button, Analog Pin"] = {
   setUp: function(done) {
-    this.digitalRead = sinon.spy(board.io, "digitalRead");
+    this.digitalRead = sinon.spy(MockFirmata.prototype, "digitalRead");
     this.button = new Button({
       pin: "A0",
       board: board
@@ -184,8 +196,21 @@ exports["Button, Analog Pin"] = {
       clock.restore();
       test.done();
     });
+
+    this.button.holdtime = 10;
     callback(this.button.downValue);
-    clock.tick(500);
-    callback(this.button.upValue);
+    clock.tick(2);
+    callback(this.button.downValue);
+    clock.tick(2);
+    callback(this.button.downValue);
+    clock.tick(2);
+    callback(this.button.downValue);
+    clock.tick(2);
+    callback(this.button.downValue);
+    clock.tick(2);
+    callback(this.button.downValue);
+    clock.tick(2);
+    callback(this.button.downValue);
+    clock.tick(2);
   },
 };
